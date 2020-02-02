@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'SolarSystemsController@index');
+
+Route::get('/planets', 'PlanetsController@index');
+Route::post('/planets', 'PlanetsController@store');
+Route::get('/planets/discover', 'PlanetsController@discover');
+Route::get('/planets/{planet}', 'PlanetsController@show');
