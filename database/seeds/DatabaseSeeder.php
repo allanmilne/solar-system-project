@@ -9,5 +9,10 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run() {}
+    public function run() 
+    {
+        $this->call(SolarSystemsTableSeeder::class);
+        $this->call(PlanetsTableSeeder::class);
+        $this->call(StarsTableSeeder::class);
+    }
 }

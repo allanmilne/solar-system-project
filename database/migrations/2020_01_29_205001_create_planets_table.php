@@ -15,10 +15,17 @@ class CreatePlanetsTable extends Migration
     {
         Schema::create('planets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('solar_system_id'); // foreign key
             $table->string('name');
             $table->double('distance');
             $table->double('mass');
             $table->timestamps();
+
+            $table->foreign('solar_system_id')
+                ->references('id')
+                ->on('solar_systems')
+                ->onDelete('cascade');
+ 
         });
     }
 

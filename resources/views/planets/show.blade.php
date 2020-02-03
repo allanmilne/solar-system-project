@@ -8,9 +8,13 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
-    <a href="/planets/" class="btn btn-link">Planets</a>
-    <a href="/planets/discover" class="btn btn-link">Discover Planet</a>
-    <h1>Solar System</h1>
-    {{-- Hook into db and display JSON --}}
+    <a href="/planets" class="btn btn-link">Go Back</a>
+    <h1>{{$planet->name}}</h1>
+    <div>
+        <p>Distance from sun is {{$planet->distance}}AU</p>
+        <p>Mass of {{$planet->name}} is {{$planet->mass}}KG</p>
+    </div>
+    <hr>
+<a href="/planets/{{$planet->id}}/edit" class="btn btn-link">Edit</a>
 </body>
 </html>

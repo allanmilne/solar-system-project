@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New Planet</title>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <title>{{ config('app.name') }}</title>
 </head>
-
 <body>
+    <a href="/planets" class="btn btn-link">Go Back</a>
     <h1>Discover Planet</h1>
 
     <form method="POST" action="/planets">
         @csrf
 
-        <div class="field">
+        <div class="form-group">
             <label class="label" for="name">Planet Name</label>
 
             <div class="control">
@@ -21,7 +22,7 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="form-group">
             <label class="label" for="distance">Distance from Sun</label>
 
             <div class="control">
@@ -29,16 +30,16 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="form-group">
             <label class="label" for="mass">Weight of Planet</label>
 
             <div class="control">
                 <input class="input" name="mass" id="mass">
             </div>
         </div>
-        <div class="field is-grouped">
+        <div class="form-group is-grouped">
             <div class="control">
-                <button class="button is-link" type="submit">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </div>
         </div>
     </form>

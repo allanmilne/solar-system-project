@@ -14,7 +14,6 @@
 
 Route::get('/', 'SolarSystemsController@index');
 
-Route::get('/planets', 'PlanetsController@index');
-Route::post('/planets', 'PlanetsController@store');
 Route::get('/planets/discover', 'PlanetsController@discover');
-Route::get('/planets/{planet}', 'PlanetsController@show');
+
+Route::resource('planets', 'PlanetsController');    // run php artisan route:list and Laravel creates the RESTful routes in PlanetsController
